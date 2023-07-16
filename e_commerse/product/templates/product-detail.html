@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<div class="card" style="width: 18rem;">
+  <img src="{{ object.image.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ object.title }}</h5>
+    <p class="card-text">{{ object.description_long }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">MRP Price : {{ object.mrp_price }}</li>
+    <li class="list-group-item">Discount Price : {{ object.discount_price }}</li>
+    <li class="list-group-item">Category : {{ object.category }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+</div>
+
+{% endblock content %}

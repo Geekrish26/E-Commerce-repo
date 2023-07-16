@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Django E-Shop </title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+        {% block content %}
+            <h2> DJANGO ELECTRONIC SHOP </h2>
+            <div>
+                Welcome to Django Electronic Shop
+            </div>
+            <h3> Product Details </h3>
+            <p style="color:blue; size=10">  Available Products : </p>
+
+            {% for item in object_list %}
+
+<!--                <img src="{{ item.image.url }}" class="card-img-top" alt="product image">-->
+
+                <img src="{{ item.image.url }}"  alt="product image">
+                <div> Product: {{ item.title }}</div>
+                <div> MRP :  {{ item.mrp_price }}</div>
+                <div> Discounted Price : {{ item.discount_price }}</div>
+                <div> Category : {{ item.category }}</div>
+
+            {% endfor %}
+
+    {% endblock %}
+</body>
+</html>

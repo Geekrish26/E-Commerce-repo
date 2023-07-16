@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    {% for item in addttocart %}
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+        <img src="{{ item.image.url }}" class="card-img-top" alt="product image">
+        <div class="card-body">
+            <h5 class="card-title">product {{item.product }}</h5>
+            <!-- <p class="card-text">profile {{item.profile }}</p> -->
+            <p class="card-text">quantity {{item.quantity }}</p>
+            <p class="card-text">date {{ item.date }}</p>
+            <!-- <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Check out</a> -->
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    
+{% endblock content %}

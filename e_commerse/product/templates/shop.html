@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<div class="container">
+
+
+	<div class="row">
+		{% for item in object_list %}
+    <div class="col-md-3">
+		<div class="card" style="width: 18rem;">
+		  <img src="{{ item.image.url }}" class="card-img-top" alt="product image">
+		  <div class="card-body">
+			<h5 class="card-title">{{ item.title }}</h5>
+			<p class="card-text">{{ item.description_long }}</p>
+			<p class="card-text">Discount Prize {{ item.discount_price }}</p>
+			<a href="{{ item.get_absolute_url }}" class="btn btn-primary">Check out</a>
+		  </div>
+		</div>
+	</div>
+		{% endfor %}
+	</div>
+
+	</div>
+
+{% endblock content %}
+
